@@ -215,21 +215,21 @@ const ChatPage = ({ id, fetchedMessage }) => {
 };
 
 export const getServerSideProps = async (context) => {
-  const docRef = doc(db, "chats", context.query.id);
-  const docSnap = await getDoc(docRef);
-  let messages = [];
+  // const docRef = doc(db, "chats", context.query.id);
+  // const docSnap = await getDoc(docRef);
+  // let messages = [];
 
-  if (docSnap.exists() && docSnap.data().messages) {
-    messages = docSnap.data().messages.map((item, index) => ({
-      ...item,
-      timestamp: item.timestamp.toDate().toString(),
-      id: index,
-    }));
-  }
+  // if (docSnap.exists() && docSnap.data().messages) {
+  //   messages = docSnap.data().messages.map((item, index) => ({
+  //     ...item,
+  //     timestamp: item.timestamp.toDate().toString(),
+  //     id: index,
+  //   }));
+  // }
   return {
     props: {
       id: context.query.id,
-      fetchedMessage: messages,
+      //fetchedMessage: messages,
     },
   };
 };
