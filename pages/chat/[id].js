@@ -9,7 +9,6 @@ import {
   query,
   collection,
   where,
-  getDoc,
 } from "firebase/firestore";
 import {
   DotsVerticalIcon,
